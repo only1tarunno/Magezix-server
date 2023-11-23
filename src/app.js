@@ -8,6 +8,7 @@ const port = process.env.PORT || 5000;
 // routers
 const authRoutes = require("./routes/Authentication/authentication");
 const trendingRoute = require("./routes/Trendring/trendring");
+const publisherRoute = require("./routes/Publisher/publisher");
 
 // middlewares
 applyMiddleWares(app);
@@ -15,8 +16,11 @@ applyMiddleWares(app);
 // jwt related api
 app.use(authRoutes);
 
-// trending article
+// trending article api
 app.use(trendingRoute);
+
+// publishers api
+app.use(publisherRoute);
 
 // server health check api
 app.get("/", (req, res) => {

@@ -10,10 +10,6 @@ const ArticleSchema = new Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-  },
   publisher: {
     type: String,
     required: true,
