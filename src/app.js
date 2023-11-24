@@ -10,12 +10,16 @@ const authRoutes = require("./routes/Authentication/authentication");
 const trendingRoute = require("./routes/Trendring/trendring");
 const publisherRoute = require("./routes/Publisher/publisher");
 const allArticlesRoute = require("./routes/AllArticles/allArticles");
+const allUsers = require("./routes/User/user");
 
 // middlewares
 applyMiddleWares(app);
 
 // jwt related api
 app.use(authRoutes);
+
+// allUsers api
+app.use(allUsers);
 
 // trending article api
 app.use(trendingRoute);
