@@ -15,6 +15,14 @@ const ArticleSchema = new Schema({
     required: true,
   },
   tags: {
+    type: [String],
+    required: true,
+  },
+  Approved: {
+    type: String,
+    required: true,
+  },
+  premium: {
     type: String,
     required: true,
   },

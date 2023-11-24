@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 const authRoutes = require("./routes/Authentication/authentication");
 const trendingRoute = require("./routes/Trendring/trendring");
 const publisherRoute = require("./routes/Publisher/publisher");
+const allArticlesRoute = require("./routes/AllArticles/allArticles");
 
 // middlewares
 applyMiddleWares(app);
@@ -18,6 +19,9 @@ app.use(authRoutes);
 
 // trending article api
 app.use(trendingRoute);
+
+// allArticles api
+app.use(allArticlesRoute);
 
 // publishers api
 app.use(publisherRoute);
