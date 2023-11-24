@@ -15,11 +15,6 @@ const allArticles = async (req, res) => {
     query.tags = { $in: [tagFilter] };
   }
 
-  // let query = searchQuery
-  //     ? {
-  //         title: new RegExp(req.query.searchQuery, "i"),
-  //       }
-  //     : {  };
   try {
     const approvedArticles = await Article.find(query)
       .skip(limit * offset)
