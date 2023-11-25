@@ -5,7 +5,6 @@ const ArticleSchema = new Schema({
     type: String,
     required: true,
   },
-
   image: {
     type: String,
     required: true,
@@ -27,6 +26,18 @@ const ArticleSchema = new Schema({
     required: true,
   },
   description: {
+    type: String,
+    required: true,
+  },
+  authorEmail: {
+    type: String,
+    required: true,
+  },
+  authorPhoto: {
+    type: String,
+    required: true,
+  },
+  postedTime: {
     type: String,
     required: true,
   },
