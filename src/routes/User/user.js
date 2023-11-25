@@ -1,27 +1,15 @@
+const checkPremium = require("../../api/UsersController/checkpremium");
 const createUser = require("../../api/UsersController/createUser");
-const User = require("../../models/User");
+const userUpdate = require("../../api/UsersController/userUpdate");
+const verifyToken = require("../../middleWares/verifyToken");
 
 const router = require("express").Router();
 
+// check user premium
+router.get("/users/UserPremium/:email", verifyToken, checkPremium);
+
 router.post("/users", createUser);
 
-router.patch("/users/:email", async (req, res) => {
-  const email = req.params.email;
-  const updatingUser = req.body;
-
-  try {
-    const filter = { email: email };
-    const updateDoc = {
-      $set: {
-        premimiumExpire: updatingUser.premimiumExpire,
-      },
-    };
-
-    const result = await User.updateOne(filter, updateDoc);
-    res.send(result);
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
+router.patch("/users/:email", userUpdate);
 
 module.exports = router;

@@ -12,6 +12,7 @@ const publisherRoute = require("./routes/Publisher/publisher");
 const allArticlesRoute = require("./routes/AllArticles/allArticles");
 const allUsers = require("./routes/User/user");
 const paymentRoute = require("./routes/Payment/Payment");
+const userCountRoute = require("./routes/Statistics/userAnalitics");
 
 // middlewares
 applyMiddleWares(app);
@@ -33,6 +34,9 @@ app.use(publisherRoute);
 
 // payment related api
 app.use(paymentRoute);
+
+// user count
+app.use(userCountRoute);
 
 // server health check api
 app.get("/", (req, res) => {

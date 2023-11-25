@@ -18,10 +18,6 @@ const UserSchema = new Schema({
     type: Boolean,
     required: true,
   },
-  lastLogin: {
-    type: String,
-    required: true,
-  },
   role: {
     type: String,
     required: true,

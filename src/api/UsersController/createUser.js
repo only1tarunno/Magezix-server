@@ -6,10 +6,6 @@ const createUser = async (req, res) => {
     const existingUser = await User.findOne({ email: userData.email });
 
     if (existingUser) {
-      await User.updateOne(
-        { email: userData.email },
-        { lastLogin: userData.lastLogin }
-      );
       return res.send({ message: "User already exists" });
     } else {
       const result = await User.create(userData);
