@@ -26,6 +26,10 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  premimiumExpire: {
+    type: String,
+    default: null,
+  },
 });
 
 const User = model("User", UserSchema);

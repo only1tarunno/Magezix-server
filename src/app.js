@@ -11,6 +11,7 @@ const trendingRoute = require("./routes/Trendring/trendring");
 const publisherRoute = require("./routes/Publisher/publisher");
 const allArticlesRoute = require("./routes/AllArticles/allArticles");
 const allUsers = require("./routes/User/user");
+const paymentRoute = require("./routes/Payment/Payment");
 
 // middlewares
 applyMiddleWares(app);
@@ -29,6 +30,9 @@ app.use(allArticlesRoute);
 
 // publishers api
 app.use(publisherRoute);
+
+// payment related api
+app.use(paymentRoute);
 
 // server health check api
 app.get("/", (req, res) => {
