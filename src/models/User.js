@@ -26,6 +26,14 @@ const UserSchema = new Schema({
     type: String,
     default: null,
   },
+  phoneNum: {
+    type: String,
+    default: null,
+  },
+  address: {
+    type: String,
+    default: null,
+  },
 });
 
 const User = model("User", UserSchema);

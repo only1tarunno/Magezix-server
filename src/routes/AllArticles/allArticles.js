@@ -7,7 +7,7 @@ const verifyToken = require("../../middleWares/verifyToken");
 const router = require("express").Router();
 
 // all article
-router.get("/premiumArticles", premiumArticles);
+router.get("/premiumArticles", verifyToken, premiumArticles);
 
 // onlypremium articles
 router.get("/allArticles", allArticles);
