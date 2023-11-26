@@ -13,6 +13,7 @@ const allArticlesRoute = require("./routes/AllArticles/allArticles");
 const allUsers = require("./routes/User/user");
 const paymentRoute = require("./routes/Payment/Payment");
 const userCountRoute = require("./routes/Statistics/userAnalitics");
+const emailArticleRoute = require("./routes/Articlesbyemail/articlesbyEmail");
 
 // middlewares
 applyMiddleWares(app);
@@ -28,6 +29,9 @@ app.use(trendingRoute);
 
 // allArticles api
 app.use(allArticlesRoute);
+
+// allArticles by email api
+app.use(emailArticleRoute);
 
 // publishers api
 app.use(publisherRoute);
