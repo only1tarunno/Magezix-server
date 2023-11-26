@@ -1,7 +1,7 @@
 const { model, Schema } = require("mongoose");
 
 const PublisherSchema = new Schema({
-  Name: {
+  name: {
     type: String,
     required: true,
   },

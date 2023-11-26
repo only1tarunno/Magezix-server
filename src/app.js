@@ -14,6 +14,7 @@ const allUsers = require("./routes/User/user");
 const paymentRoute = require("./routes/Payment/Payment");
 const userCountRoute = require("./routes/Statistics/userAnalitics");
 const emailArticleRoute = require("./routes/Articlesbyemail/articlesbyEmail");
+const adminRoute = require("./routes/Admin/admin");
 
 // middlewares
 applyMiddleWares(app);
@@ -23,6 +24,9 @@ app.use(authRoutes);
 
 // allUsers api
 app.use(allUsers);
+
+// Admin related api
+app.use(adminRoute);
 
 // trending article api
 app.use(trendingRoute);
