@@ -1,16 +1,15 @@
 const allArticles = require("../../api/AllArticlesController/allArticles");
 const allArticlesPost = require("../../api/AllArticlesController/allArticlesPost");
-
 const premiumArticles = require("../../api/AllArticlesController/premiumArticle");
 const singleArticlePost = require("../../api/AllArticlesController/singleArticlePost");
 const verifyToken = require("../../middleWares/verifyToken");
 
 const router = require("express").Router();
 
-// all article
+// onlypremium articles
 router.get("/premiumArticles", verifyToken, premiumArticles);
 
-// onlypremium articles
+// all approved article
 router.get("/allArticles", allArticles);
 
 // single article
