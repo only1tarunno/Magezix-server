@@ -1,12 +1,18 @@
 const Article = require("../../models/Article");
 
 const entireArticle = async (req, res) => {
-  const page = parseInt(req?.query?.page);
-  const size = parseInt(req?.query?.size);
-  const result = await Article.find()
-    .skip(page * size)
-    .limit(size);
-  res.send(result);
+  try {
+    const page = parseInt(req.query.page) || 0;
+    const size = parseInt(req.query.size) || 6;
+
+    const result = await Article.find()
+      .skip(page * size)
+      .limit(size);
+
+    res.send(result);
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 module.exports = entireArticle;

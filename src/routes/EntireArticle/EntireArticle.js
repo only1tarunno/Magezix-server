@@ -7,9 +7,9 @@ const verifyToken = require("../../middleWares/verifyToken");
 
 const router = require("express").Router();
 
-router.get("/entireArticle", entireArticle);
+router.get("/entireArticle", verifyToken, verifyAdmin, entireArticle);
 
-router.get("/entireArticlesCount", articlesCount);
+router.get("/entireArticlesCount", verifyToken, verifyAdmin, articlesCount);
 
 router.patch("/entireArticle/:id", verifyToken, verifyAdmin, updateArticle);
 
