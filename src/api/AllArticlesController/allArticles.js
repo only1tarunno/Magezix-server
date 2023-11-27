@@ -5,6 +5,7 @@ const allArticles = async (req, res) => {
   const limit = parseInt(req.query.limit);
   const filter = req.query.search;
   const tagFilter = req.query.tags;
+  const publishFilter = req.query.publisher;
 
   let query = { Approved: "approved" };
 
@@ -13,6 +14,10 @@ const allArticles = async (req, res) => {
   }
   if (tagFilter) {
     query.tags = { $in: [tagFilter] };
+  }
+
+  if (publishFilter) {
+    query.publisher = publishFilter;
   }
 
   try {
