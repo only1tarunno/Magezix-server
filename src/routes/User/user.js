@@ -4,6 +4,7 @@ const everyUserDashboard = require("../../api/UsersController/everyUser");
 const everyUserCount = require("../../api/UsersController/everyUserCount");
 const userProfileUpdate = require("../../api/UsersController/userProfileUpdate");
 const userUpdate = require("../../api/UsersController/userUpdate");
+const verifyAdmin = require("../../middleWares/verifyAdmin");
 const verifyToken = require("../../middleWares/verifyToken");
 
 const router = require("express").Router();
@@ -12,9 +13,9 @@ const router = require("express").Router();
 router.get("/users/UserPremium/:email", verifyToken, checkPremium);
 
 // get all user
-router.get("/everyUsers", everyUserDashboard);
+router.get("/everyUsers", verifyToken, verifyAdmin, everyUserDashboard);
 // count all user
-router.get("/everyUsersCount", everyUserCount);
+router.get("/everyUsersCount", verifyToken, verifyAdmin, everyUserCount);
 
 router.post("/users", createUser);
 
