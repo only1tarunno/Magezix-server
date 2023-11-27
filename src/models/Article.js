@@ -49,6 +49,10 @@ const ArticleSchema = new Schema({
     type: Number,
     required: true,
   },
+  reason: {
+    type: String,
+    default: null,
+  },
 });
 
 const Article = model("Article", ArticleSchema);
