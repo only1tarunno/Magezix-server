@@ -69,12 +69,5 @@ app.use((err, req, res, next) => {
   });
 });
 
-// const main = async () => {
-//   await connectDB();
-//   app.listen(port, () => {
-//     console.log(`Server is running on port ${port}`);
-//   });
-// };
-
-// main();
 module.exports = app;
+// text
